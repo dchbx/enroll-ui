@@ -40,7 +40,7 @@ const brokersReducer = createReducer(
     error: null,
   })),
   on(BrokersActions.loadBrokersSuccess, (state, { brokers }) =>
-    brokersAdapter.addAll(brokers, { ...state, loaded: true })
+    brokersAdapter.setAll(brokers, { ...state, loaded: true })
   ),
   on(BrokersActions.loadBrokersFailure, (state, { error }) => ({
     ...state,
