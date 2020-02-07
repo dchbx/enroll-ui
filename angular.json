@@ -20,7 +20,7 @@
             "main": "apps/admin/src/main.ts",
             "polyfills": "apps/admin/src/polyfills.ts",
             "tsConfig": "apps/admin/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "apps/admin/src/favicon.ico",
               "apps/admin/src/assets",
@@ -49,7 +49,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -183,7 +182,7 @@
             "main": "apps/design-system/src/main.ts",
             "polyfills": "apps/design-system/src/polyfills.ts",
             "tsConfig": "apps/design-system/tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "apps/design-system/src/favicon.ico",
               "apps/design-system/src/assets",
@@ -212,7 +211,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
