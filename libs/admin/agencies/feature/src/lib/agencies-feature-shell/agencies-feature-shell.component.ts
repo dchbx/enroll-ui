@@ -21,6 +21,8 @@ export class AgenciesFeatureShellComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // console.log(this.getTokenFromUrl());
+
     this.agencyStaffFacade.dispatch(AgencyStaffActions.loadAgencyStaff());
     this.agenciesFacade.dispatch(AgenciesActions.loadAgencies());
     this.primaryAgentsFacade.dispatch(PrimaryAgentsActions.loadPrimaryAgents());

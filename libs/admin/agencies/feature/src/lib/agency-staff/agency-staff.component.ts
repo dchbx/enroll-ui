@@ -37,7 +37,9 @@ export class AgencyStaffComponent implements OnInit {
 
   constructor(private agencyStaffFacade: AgencyStaffFacade) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.log(this.getTokenFromUrl());
+  }
 
   logChange(event: any): void {
     console.log(event);
