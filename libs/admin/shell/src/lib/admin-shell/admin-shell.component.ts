@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
+import { AuthService } from '@hbx/auth';
+
 @Component({
   selector: 'hbx-admin-shell',
   templateUrl: './admin-shell.component.html',
@@ -7,10 +9,10 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AdminShellComponent implements OnInit {
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
-    console.log(this.getTokenFromUrl());
+    this.authService.setToken(this.getTokenFromUrl());
   }
 
   getTokenFromUrl(): string {
