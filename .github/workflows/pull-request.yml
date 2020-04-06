@@ -36,7 +36,7 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
       - name: Build Application
-        run: npm run affected:build -- --base=origin/master --head=origin/master
+        run: npm run affected:build -- --base=origin/master~1 --head=origin/master
       # - name: The job has failed
       #   if: failure()
       #   run: ./post_build_results_ga.sh
