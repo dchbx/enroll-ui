@@ -24,8 +24,10 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
-          fetch-depth: 2
+          fetch-depth: 0
           ref: ${{ github.event.pull_request.head.ref }}
+      - run: |
+          git fetch --no-tags --prune --depth=5 origin master
       - name: Use Node.js v12
         uses: actions/setup-node@v1.1.0
         with:
