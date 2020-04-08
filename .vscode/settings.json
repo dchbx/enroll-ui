@@ -26,6 +26,7 @@
     "nomodule",
     "nrwl",
     "preprod",
+    "promisify",
     "state",
     "styleext",
     "stylelint",
