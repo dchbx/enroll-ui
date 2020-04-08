@@ -8,9 +8,13 @@ async function rebasePR() {
   const { stdout: latestShaOfTargetBranch } = await exec(
     `git rev-parse origin/${TARGET_BRANCH}`
   );
-  const { stdout: commonAncestorSha } = await exec(
-    `git merge-base origin/${TARGET_BRANCH} ${LATEST_PR_SHA}`
-  );
+  try {
+    const { stdout: commonAncestorSha } = await exec(
+      `git merge-base origin/${TARGET_BRANCH} ${PR_BRANCH}`
+    );
+  } catch (e) {
+    throw Error(e);
+  }
 
   console.log(`--------------------------------`);
   console.log(` Target Branch:                   ${TARGET_BRANCH}`);
