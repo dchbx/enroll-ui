@@ -32,6 +32,7 @@ jobs:
           node-version: "12.x"
       - name: Rebase
         run: |
+          git fetch --no-tags --prune --depth=5 origin master
           node ./tools/scripts/rebase-pr
   # build:
   #   name: Build
