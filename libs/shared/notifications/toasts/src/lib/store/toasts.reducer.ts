@@ -25,21 +25,7 @@ export const initialState: State = toastsAdapter.getInitialState({
   loaded: false,
 });
 
-const toastsReducer = createReducer(
-  initialState,
-  on(ToastsActions.loadToasts, state => ({
-    ...state,
-    loaded: false,
-    error: null,
-  })),
-  on(ToastsActions.loadToastsSuccess, (state, { toasts }) =>
-    toastsAdapter.addAll(toasts, { ...state, loaded: true })
-  ),
-  on(ToastsActions.loadToastsFailure, (state, { error }) => ({
-    ...state,
-    error,
-  }))
-);
+const toastsReducer = createReducer(initialState);
 
 export function reducer(state: State | undefined, action: Action) {
   return toastsReducer(state, action);
