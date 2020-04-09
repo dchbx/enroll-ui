@@ -48,6 +48,40 @@ jobs:
       # - name: The job has failed
       #   if: failure()
       #   run: ./post_build_results_ga.sh
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.ref }}
+      - run: |
+          git fetch --no-tags --prune --depth=5 origin master
+      - name: Use Node.js v12
+        uses: actions/setup-node@v1.1.0
+        with:
+          node-version: '12.x'
+      - name: Cache node modules
+        uses: actions/cache@v1
+        id: npm-cache
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node12-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node12-
+      - name: Install dependencies
+        # https://github.com/actions/cache/issues/193
+        if: steps.npm-cache.outputs.cache-hit != 'true'
+        run: npm ci
+      - name: Stylelint
+        run: npm run stylelint:ci
+      - name: Lint
+        run: npm run affected:lint -- --base=origin/master --parallel
+      # - name: The job has failed
+      #   if: failure()
+      #   run: ./post_build_results_ga.sh
   test:
     name: Test
     runs-on: ubuntu-latest
