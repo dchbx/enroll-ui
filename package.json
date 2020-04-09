@@ -95,7 +95,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx stylelint \"**/*.scss\" --fix"
+      "pre-commit": "npm run lint:fix"
     }
   }
 }
