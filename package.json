@@ -11,6 +11,7 @@
     "build:admin": "ng build --project=admin --configuration=production --baseHref=\"/admin/\"",
     "test": "ng test",
     "lint": "npx stylelint \"**/*.scss\" && nx workspace-lint && ng lint",
+    "stylelint:ci": "stylelint \"**/*.scss\"",
     "lint:fix": "npx stylelint \"**/*.scss\" --fix && nx workspace-lint --fix && ng lint --fix",
     "e2e": "ng e2e",
     "e2e:admin": "ng e2e --project=admin-e2e -- --watch",
