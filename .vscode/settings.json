@@ -3,6 +3,7 @@
     "AGENCYSTAFF",
     "BROKERSTAFF",
     "Buildable",
+    "Chainable",
     "Devtools",
     "Marak",
     "PRIMARYAGENTS",
