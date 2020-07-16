@@ -6,7 +6,7 @@ on:
       - master
 
 env: # https://stackoverflow.com/questions/59867124/how-can-i-access-github-action-environment-variables-within-a-bash-script-run-by
-  NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
+  # NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
   CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
 jobs:
@@ -50,7 +50,7 @@ jobs:
         run: |
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
-      - run: ./cc-test-reporter before-build
+      - run: ./cc-test-reporter before-build --debug
       - name: Run e2e tests
         run: npm run e2e:admin:ci -- --prod --parallel --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
       - run: ./cc-test-reporter after-build --debug -t lcov
