@@ -49,7 +49,7 @@ jobs:
       # - name: Run end to end tests
       #   run: npm run e2e:admin:ci -- --prod --parallel --record --key ${{ secrets.CYPRESS_RECORD_KEY }}
       - name: Report code coverage to code climate
-        uses: paambaati/codeclimate-action@v2
+        uses: paambaati/codeclimate-action@v2.6.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         with:
