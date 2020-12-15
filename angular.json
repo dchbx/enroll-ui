@@ -52,7 +52,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": true,
@@ -70,7 +69,8 @@
                 }
               ]
             }
-          }
+          },
+          "outputs": ["{options.outputPath}"]
         },
         "serve": {
           "builder": "ngx-build-plus:dev-server",
@@ -105,10 +105,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/admin/jest.config.js",
-            "tsConfig": "apps/admin/tsconfig.spec.json",
-            "setupFile": "apps/admin/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/apps/admin"]
         }
       }
     },
@@ -159,10 +158,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/theme/jest.config.js",
-            "tsConfig": "libs/theme/tsconfig.spec.json",
-            "setupFile": "libs/theme/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/theme"]
         }
       },
       "schematics": {
@@ -191,10 +189,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/api-interfaces/jest.config.js",
-            "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
-            "setupFile": "libs/api-interfaces/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/api-interfaces"]
         }
       },
       "schematics": {
@@ -226,10 +223,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/admin/agencies/data-access/jest.config.js",
-            "tsConfig": "libs/admin/agencies/data-access/tsconfig.spec.json",
-            "setupFile": "libs/admin/agencies/data-access/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/admin/agencies/data-access"]
         }
       },
       "schematics": {
@@ -261,10 +257,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/admin/agencies/feature/jest.config.js",
-            "tsConfig": "libs/admin/agencies/feature/tsconfig.spec.json",
-            "setupFile": "libs/admin/agencies/feature/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/admin/agencies/feature"]
         }
       },
       "schematics": {
@@ -296,10 +291,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/admin/shared/view-models/jest.config.js",
-            "tsConfig": "libs/admin/shared/view-models/tsconfig.spec.json",
-            "setupFile": "libs/admin/shared/view-models/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/admin/shared/view-models"]
         }
       },
       "schematics": {
@@ -328,10 +322,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/admin/shell/jest.config.js",
-            "tsConfig": "libs/admin/shell/tsconfig.spec.json",
-            "setupFile": "libs/admin/shell/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/admin/shell"]
         }
       },
       "schematics": {
@@ -360,10 +353,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/utils/testing/jest.config.js",
-            "tsConfig": "libs/utils/testing/tsconfig.spec.json",
-            "setupFile": "libs/utils/testing/src/test-setup.ts",
             "passWithNoTests": true
-          }
+          },
+          "outputs": ["coverage/libs/utils/testing"]
         }
       },
       "schematics": {
@@ -395,10 +387,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/admin/shared/ui-components/jest.config.js",
-            "tsConfig": "libs/admin/shared/ui-components/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/admin/shared/ui-components/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/admin/shared/ui-components"]
         }
       },
       "schematics": {
@@ -427,10 +418,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/auth/jest.config.js",
-            "tsConfig": "libs/auth/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/auth/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/auth"]
         }
       },
       "schematics": {
@@ -462,10 +452,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/utils/data-transformation/jest.config.js",
-            "tsConfig": "libs/utils/data-transformation/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/utils/data-transformation/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/utils/data-transformation"]
         }
       },
       "schematics": {
@@ -497,10 +486,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/utils/form-validators/jest.config.js",
-            "tsConfig": "libs/utils/form-validators/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/utils/form-validators/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/utils/form-validators"]
         }
       },
       "schematics": {
@@ -529,10 +517,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/user/data-access/jest.config.js",
-            "tsConfig": "libs/user/data-access/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/user/data-access/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/user/data-access"]
         }
       },
       "schematics": {
@@ -561,10 +548,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/user/store/jest.config.js",
-            "tsConfig": "libs/user/store/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/user/store/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/user/store"]
         }
       },
       "schematics": {
@@ -593,10 +579,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/user/utils/jest.config.js",
-            "tsConfig": "libs/user/utils/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/user/utils/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/user/utils"]
         }
       },
       "schematics": {
@@ -625,10 +610,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/user/permissions/jest.config.js",
-            "tsConfig": "libs/user/permissions/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/user/permissions/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/user/permissions"]
         }
       },
       "schematics": {
@@ -660,10 +644,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/notifications/toasts/jest.config.js",
-            "tsConfig": "libs/shared/notifications/toasts/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/shared/notifications/toasts/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/notifications/toasts"]
         }
       },
       "schematics": {
@@ -695,10 +678,9 @@
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/shared/google-analytics/jest.config.js",
-            "tsConfig": "libs/shared/google-analytics/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/shared/google-analytics/src/test-setup.ts"
-          }
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/libs/shared/google-analytics"]
         }
       },
       "schematics": {
